@@ -42,9 +42,30 @@
     </section>
 
     <section>
-        <h2>Ejemplo de Código en C</h2>
+    <h2>Ejemplo de Código en C</h2>
+    <p>Control de un semáforo simple con 3 LEDs:</p>
+    <pre><code>
+#include &lt;avr/io.h&gt;
+#include &lt;util/delay.h&gt;
 
-    </section>
+int main(void) {
+    DDRB = 0b00000111;
+
+    while (1) {
+        PORTB = 0b00000001; // Rojo
+        _delay_ms(3000);
+
+        PORTB = 0b00000010; // Amarillo
+        _delay_ms(1000);
+
+        PORTB = 0b00000100; // Verde
+        _delay_ms(3000);
+    }
+    return 0;
+}
+
+    </code></pre>
+</section>
 
     <section>
         <h2>Imágenes de Ejemplos de Programación</h2>
